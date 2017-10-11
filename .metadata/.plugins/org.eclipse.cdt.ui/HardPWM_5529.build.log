@@ -1,0 +1,118 @@
+
+**** Build of configuration Debug for project HardPWM_5529 ****
+
+"C:\\ti\\ccsv7\\utils\\bin\\gmake" -k -j 4 all -O 
+'Building target: HardPWM_5529.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.3.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 -z -m"HardPWM_5529.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"C:/ti/ccsv7/ccs_base/msp430/include" -i"C:/ti/ccsv7/ccs_base/msp430/lib/5xx_6xx_FRxx" -i"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.3.LTS/lib" -i"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.3.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="HardPWM_5529_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "HardPWM_5529.out" "./main.obj" "../New folder/Debug/main.obj" "./New folder/main.obj" "../lnk_msp430f5529.cmd" "../New folder/lnk_msp430f5529.cmd"  -llibmath.a -llibc.a 
+<Linking>
+"../New folder/lnk_msp430f5529.cmd", line 56: error #10263: SFR memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 56: error #10264: SFR memory range overlaps existing memory range SFR
+"../New folder/lnk_msp430f5529.cmd", line 57: error #10263: PERIPHERALS_8BIT memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 57: error #10264: PERIPHERALS_8BIT memory range overlaps existing memory range PERIPHERALS_8BIT
+"../New folder/lnk_msp430f5529.cmd", line 58: error #10263: PERIPHERALS_16BIT memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 58: error #10264: PERIPHERALS_16BIT memory range overlaps existing memory range PERIPHERALS_16BIT
+"../New folder/lnk_msp430f5529.cmd", line 59: error #10263: RAM memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 59: error #10264: RAM memory range overlaps existing memory range RAM
+"../New folder/lnk_msp430f5529.cmd", line 60: error #10263: USBRAM memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 60: error #10264: USBRAM memory range overlaps existing memory range USBRAM
+"../New folder/lnk_msp430f5529.cmd", line 61: error #10263: INFOA memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 61: error #10264: INFOA memory range overlaps existing memory range INFOA
+"../New folder/lnk_msp430f5529.cmd", line 62: error #10263: INFOB memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 62: error #10264: INFOB memory range overlaps existing memory range INFOB
+"../New folder/lnk_msp430f5529.cmd", line 63: error #10263: INFOC memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 63: error #10264: INFOC memory range overlaps existing memory range INFOC
+"../New folder/lnk_msp430f5529.cmd", line 64: error #10263: INFOD memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 64: error #10264: INFOD memory range overlaps existing memory range INFOD
+"../New folder/lnk_msp430f5529.cmd", line 65: error #10263: FLASH memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 65: error #10264: FLASH memory range overlaps existing memory range FLASH
+"../New folder/lnk_msp430f5529.cmd", line 66: error #10263: FLASH2 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 66: error #10264: FLASH2 memory range overlaps existing memory range FLASH2
+"../New folder/lnk_msp430f5529.cmd", line 67: error #10263: INT00 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 67: error #10264: INT00 memory range overlaps existing memory range INT00
+"../New folder/lnk_msp430f5529.cmd", line 68: error #10263: INT01 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 68: error #10264: INT01 memory range overlaps existing memory range INT01
+"../New folder/lnk_msp430f5529.cmd", line 69: error #10263: INT02 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 69: error #10264: INT02 memory range overlaps existing memory range INT02
+"../New folder/lnk_msp430f5529.cmd", line 70: error #10263: INT03 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 70: error #10264: INT03 memory range overlaps existing memory range INT03
+"../New folder/lnk_msp430f5529.cmd", line 71: error #10263: INT04 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 71: error #10264: INT04 memory range overlaps existing memory range INT04
+"../New folder/lnk_msp430f5529.cmd", line 72: error #10263: INT05 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 72: error #10264: INT05 memory range overlaps existing memory range INT05
+"../New folder/lnk_msp430f5529.cmd", line 73: error #10263: INT06 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 73: error #10264: INT06 memory range overlaps existing memory range INT06
+"../New folder/lnk_msp430f5529.cmd", line 74: error #10263: INT07 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 74: error #10264: INT07 memory range overlaps existing memory range INT07
+"../New folder/lnk_msp430f5529.cmd", line 75: error #10263: INT08 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 75: error #10264: INT08 memory range overlaps existing memory range INT08
+"../New folder/lnk_msp430f5529.cmd", line 76: error #10263: INT09 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 76: error #10264: INT09 memory range overlaps existing memory range INT09
+"../New folder/lnk_msp430f5529.cmd", line 77: error #10263: INT10 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 77: error #10264: INT10 memory range overlaps existing memory range INT10
+"../New folder/lnk_msp430f5529.cmd", line 78: error #10263: INT11 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 78: error #10264: INT11 memory range overlaps existing memory range INT11
+"../New folder/lnk_msp430f5529.cmd", line 79: error #10263: INT12 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 79: error #10264: INT12 memory range overlaps existing memory range INT12
+"../New folder/lnk_msp430f5529.cmd", line 80: error #10263: INT13 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 80: error #10264: INT13 memory range overlaps existing memory range INT13
+"../New folder/lnk_msp430f5529.cmd", line 81: error #10263: INT14 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 81: error #10264: INT14 memory range overlaps existing memory range INT14
+"../New folder/lnk_msp430f5529.cmd", line 82: error #10263: INT15 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 82: error #10264: INT15 memory range overlaps existing memory range INT15
+"../New folder/lnk_msp430f5529.cmd", line 83: error #10263: INT16 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 83: error #10264: INT16 memory range overlaps existing memory range INT16
+"../New folder/lnk_msp430f5529.cmd", line 84: error #10263: INT17 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 84: error #10264: INT17 memory range overlaps existing memory range INT17
+"../New folder/lnk_msp430f5529.cmd", line 85: error #10263: INT18 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 85: error #10264: INT18 memory range overlaps existing memory range INT18
+"../New folder/lnk_msp430f5529.cmd", line 86: error #10263: INT19 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 86: error #10264: INT19 memory range overlaps existing memory range INT19
+"../New folder/lnk_msp430f5529.cmd", line 87: error #10263: INT20 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 87: error #10264: INT20 memory range overlaps existing memory range INT20
+"../New folder/lnk_msp430f5529.cmd", line 88: error #10263: INT21 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 88: error #10264: INT21 memory range overlaps existing memory range INT21
+"../New folder/lnk_msp430f5529.cmd", line 89: error #10263: INT22 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 89: error #10264: INT22 memory range overlaps existing memory range INT22
+"../New folder/lnk_msp430f5529.cmd", line 90: error #10263: INT23 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 90: error #10264: INT23 memory range overlaps existing memory range INT23
+"../New folder/lnk_msp430f5529.cmd", line 91: error #10263: INT24 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 91: error #10264: INT24 memory range overlaps existing memory range INT24
+"../New folder/lnk_msp430f5529.cmd", line 92: error #10263: INT25 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 92: error #10264: INT25 memory range overlaps existing memory range INT25
+"../New folder/lnk_msp430f5529.cmd", line 93: error #10263: INT26 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 93: error #10264: INT26 memory range overlaps existing memory range INT26
+"../New folder/lnk_msp430f5529.cmd", line 94: error #10263: INT27 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 94: error #10264: INT27 memory range overlaps existing memory range INT27
+"../New folder/lnk_msp430f5529.cmd", line 95: error #10263: INT28 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 95: error #10264: INT28 memory range overlaps existing memory range INT28
+"../New folder/lnk_msp430f5529.cmd", line 96: error #10263: INT29 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 96: error #10264: INT29 memory range overlaps existing memory range INT29
+"../New folder/lnk_msp430f5529.cmd", line 97: error #10263: INT30 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 97: error #10264: INT30 memory range overlaps existing memory range INT30
+"../New folder/lnk_msp430f5529.cmd", line 98: error #10263: INT31 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 98: error #10264: INT31 memory range overlaps existing memory range INT31
+"../New folder/lnk_msp430f5529.cmd", line 99: error #10263: INT32 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 99: error #10264: INT32 memory range overlaps existing memory range INT32
+"../New folder/lnk_msp430f5529.cmd", line 100: error #10263: INT33 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 100: error #10264: INT33 memory range overlaps existing memory range INT33
+"../New folder/lnk_msp430f5529.cmd", line 101: error #10263: INT34 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 101: error #10264: INT34 memory range overlaps existing memory range INT34
+"../New folder/lnk_msp430f5529.cmd", line 102: error #10263: INT35 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 102: error #10264: INT35 memory range overlaps existing memory range INT35
+"../New folder/lnk_msp430f5529.cmd", line 103: error #10263: INT36 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 103: error #10264: INT36 memory range overlaps existing memory range INT36
+"../New folder/lnk_msp430f5529.cmd", line 104: error #10263: INT37 memory range has already been specified
+"../New folder/lnk_msp430f5529.cmd", line 104: error #10264: INT37 memory range overlaps existing memory range INT37
+
+"../New folder/lnk_msp430f5529.cmd", line 105: error #10263: INT38 memory range has already been specified
+>> Compilation failure
+makefile:149: recipe for target 'HardPWM_5529.out' failed
+"../New folder/lnk_msp430f5529.cmd", line 105: error #10264: INT38 memory range overlaps existing memory range INT38
+"../New folder/lnk_msp430f5529.cmd", line 106: error #10263: INT39 memory range has already been specified
+fatal error #99900: error limit reached; 100 errors detected
+gmake[1]: *** [HardPWM_5529.out] Error 1
+gmake: *** [all] Error 2
+makefile:145: recipe for target 'all' failed
+
+**** Build Finished ****

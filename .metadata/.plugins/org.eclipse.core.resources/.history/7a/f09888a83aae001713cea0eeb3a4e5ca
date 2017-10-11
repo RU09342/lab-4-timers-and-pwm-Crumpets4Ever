@@ -1,0 +1,81 @@
+#include <msp430.h>
+
+#include <math.h>
+
+int count=5;
+
+void main(void)
+{
+    WDTCTL = WDTPW | WDTHOLD;   // stop watchdog timer
+    //PM5CTL0 &= ~LOCKLPM5;     //disables high impedence mode
+//LED lead
+    P1DIR |= BIT0;                              //sets the direction of pin 1 to output
+    P1OUT &= ~(BIT0);                           //sets output high
+    P4DIR |= BIT7;                              //sets the direction of pin 1 to output
+    P4OUT &= ~(BIT7);                           //sets output high
+
+//Button Jazz
+    P1DIR &= ~BIT1;                             //Sets button2, pin1.2 as an input
+    P1REN |=  BIT1;                             //Enables the pullup/down resistor
+    P1OUT |=  BIT1;                             //Set the resistor to be a pullup resistor
+
+    P2DIR &= ~BIT1;                             //Sets button2, pin1.2 as an input
+    P2OUT |=  BIT1;                             //Set the resistor to be a pullup resistor
+    P2REN |=  BIT1;                             //Enables the pullup/down resistor
+
+    TA0CTL = TASSEL_2 + MC_1; //Sets Timer A0 to SMCLK
+
+    TA0CCTL0 = CCIE; //Enables CCR0 interrupt
+    TA0CCR0 = 1000; //Sets CCR0 to 1 kHz
+
+    TA0CCTL1 = CCIE; //Enables CCR1 interrupt
+    TA0CCR1 = 500; //Sets CCR1 to .5 kHz
+
+// Interrupt Enable Jawn
+    P1IE |=BIT1;                                //enable the interrupt on Port 1.1
+    P1IES |=BIT1;                               //set as falling edge
+    P1IFG &=~(BIT1);                            //clear interrupt flag
+
+    P2IE |=BIT1;                                //enable the interrupt on Port 2.1
+    P2IES |=BIT1;                               //set as falling edge
+    P2IFG &=~(BIT1);                            //clear interrupt flag
+
+
+    _BIS_SR(LPM0_bits+GIE);
+
+}
+
+#pragma vector=PORT2_VECTOR
+__interrupt void Port_2(void)
+{
+
+        if(count==10)
+        {
+            count=0;
+            TA0CCR1=0;
+        }
+        else
+        {
+            count++;
+            TA0CCR1 = count*100; //Increments CCR1 by .1 kHz
+            //TA0CCR1 = exp(count)/44; //Increments CCR1 by .1 kHz
+        }
+
+    P4OUT ^= BIT7;
+    P2IFG &=~(BIT1);                            //clear interrupt flag
+
+}
+
+#pragma vector=TIMER0_A0_VECTOR
+__interrupt void TA1_ISR (void)
+{
+    if(count!=0)
+        P4OUT |= (BIT7);                           //sets output high
+}
+#pragma vector=TIMER0_A1_VECTOR
+__interrupt void TA0_ISR (void)
+{
+    if(count!=10)
+        P4OUT &= ~(BIT7);                           //sets output high
+    TA0IV=0;
+}

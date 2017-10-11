@@ -1,0 +1,77 @@
+#include <msp430.h>
+int brightness[10] = {0, 10, 15, 25, 50, 100, 150, 250, 400, 511};
+unsigned int i = 0;
+unsigned int cap;
+unsigned int count1;
+int main(void)
+{
+            WDTCTL = WDTPW + WDTHOLD;                 // Stop WDT
+//LED lead
+            P1DIR |= BIT0;                          //sets the direction of pin 1 to output
+            P1OUT &= ~BIT0;                         //sets LED as output
+
+            P4DIR |= BIT7;                          //sets the direction of pin 1 to output
+            P4OUT &= ~BIT7;                         //sets output high
+
+//Button Jazz
+
+            P1DIR &= ~BIT1; //Sets button2, pin1.2 as an input
+            P1REN |=  BIT1; //Enables the pullup/down resistor
+            P1OUT |=  BIT1; //Set the resistor to be a pullup resistor
+
+            P2DIR &= ~BIT1; //Sets button2, pin1.2 as an input
+            P2REN |=  BIT1; //Enables the pullup/down resistor
+            P2OUT |=  BIT1; //Set the resistor to be a pullup resistor
+
+//Timer Junk
+//PWM Part
+            cap = 3200;                           // Approximately 10 Hz, Aclk is like 32 kHz
+
+            TA0CCR0 = 3200;                           // Approximately 10 Hz, Aclk is like 32 kHz
+            TA0CTL = TASSEL_1 + MC_1 + TACLR;         // ACLK, upmode, clear TAR
+
+// Interrupt Enable Jawn
+            P1IE |=BIT1;//enable the interrupt on Port 1.1
+            P1IES |=BIT1;//set as falling edge
+            P1IFG &=~(BIT1);//clear interrupt flag
+
+            P2IE |=BIT1;//enable the interrupt on Port 2.1
+            P2IES |=BIT1;//set as falling edge
+            P2IFG &=~(BIT1);//clear interrupt flag
+
+__bis_SR_register(LPM0_bits + GIE);             // Enter LPM0
+__no_operation();                         // For debugger
+}
+#pragma vector = PORT1_VECTOR               //Reset
+__interrupt void Port_1(void)
+   {
+       count1 = 0;
+       cap = 3200;
+       P1IFG &= ~(BIT1);
+    }
+
+#pragma vector = PORT2_VECTOR               //Reset
+__interrupt void Port_2(void)
+    {
+        cap = brightness[i];
+        i++;
+        if(i>10)
+        {
+            i=0;
+        }
+        P2IFG &= ~(BIT1);
+    }
+#pragma vector = TIMER0_A0_VECTOR           //Timer counts
+__interrupt void TA0_ISR(void)
+{
+    count1++;
+
+    if (count1>=cap)
+    {
+        count1=0;
+    }
+    else if(count1<cap)
+    {
+        P4OUT ^= BIT7;                            // Toggle LED 4.7
+    }
+}
