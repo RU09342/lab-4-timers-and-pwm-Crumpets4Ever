@@ -1,12 +1,13 @@
 #include <msp430.h>
 //Author: Ben Jukus
-//Debounce 5529
+//Debounce 6989
 //which interrupt to use based on Chris Iapicco's code.
 // I had the wrong type of interrupt disable. It happens
 
 int main(void)
 {
     WDTCTL = WDTPW + WDTHOLD;                   // Stop WDT
+    PM5CTL0 &= ~LOCKLPM5;
 //LED Jazz
     P1DIR |= BIT0;                              //sets the direction of pin 1 to output
     P1OUT &= ~BIT0;                             //sets output high
